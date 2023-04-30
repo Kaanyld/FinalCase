@@ -29,7 +29,7 @@ const StarshipDetails = () => {
     navigate('/starships');
   };
 
-  if (!starship) {
+  if (!starships) {
     return <div>Loading...</div>;
   }
 
