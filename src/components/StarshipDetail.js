@@ -11,7 +11,7 @@ const StarshipDetails = () => {
   const { starshipId } = useParams();
   const { starships } = useContext(StarshipContext);
   const navigate = useNavigate();
-  const [starship, setStarship] = useState(null);
+  const [starship, setStarship] = useState({});
 
   useEffect(() => {
     const getStarshipDetails = async () => {
@@ -29,13 +29,13 @@ const StarshipDetails = () => {
     navigate('/starships');
   };
 
-  if (!starships) {
+  if (!starship.name) {
     return <div>Loading...</div>;
   }
 
   return (<>
      <Header />
-     <button className='backbutton' type='button' onClick={handleBackClick}><FaArrowLeft size = {22} />  </button> 
+     <button className='backbutton' type='button' onClick={handleBackClick}><FaArrowLeft size = {22} /> </button> 
     <div className="detail">
     <h1>{starship.name}</h1>
     <img src="https://cdnb.artstation.com/p/assets/images/images/028/214/581/large/ansel-hsiao-vsd120.jpg?1593795082" alt={starship.name} /><br />
@@ -45,8 +45,6 @@ const StarshipDetails = () => {
     <p>Max Atmosphering Speed: {starship.max_atmosphering_speed}</p>
     <p>Crew: {starship.crew}</p>
     <p>Cargo Capacity: {starship.cargo_capacity}</p>
-    
-      
     </div>
     </>
   );
