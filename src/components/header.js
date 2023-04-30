@@ -1,8 +1,12 @@
 import React from 'react'
 import '../App';
+import logo from "../assets/starwarslogo.png"
 const Header = () => {
   return (
-    <div className='header'><h1>Star wars</h1></div>
+    <div className='header'>
+      <img src={logo}  alt=''></img>
+      </div>
+      
   )
 }
 

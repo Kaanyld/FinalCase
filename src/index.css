@@ -1,21 +1,222 @@
+
 body {
+	line-height: 1;
+  background: url("https://s3-us-west-2.amazonaws.com/s.cdpn.io/314556/nightSky.jpg") center center repeat;
+
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+
+.header {
+text-align: center;
+height: 400px;}
+
+
+*{
+  padding: 0;
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  background-color: aqua;
+  box-sizing: border-box;
+}
+.flex{
+  display: flex;
+  align-items: center;
+}
+.flex-column{
+  flex-direction: column;
+}
+.flex-sb{
+  justify-content: space-between;
+}
+.flex-c{
+  justify-content: center;
+}
+.grid{
+  display: grid;
+}
+.starships-img img{
+  max-width: 180px;
+  margin-right: auto;
+  margin-left: auto;
+  gap: 3rem;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+.header {
+  background-color: black;
 }
-.header {background-color: purple;
-text-align: center;}
-
-.starships-grid {
+.header img {
+width: 600px;
+height: 250px;
+margin: 2rem;
+}
+.container{
+  max-width: 1600px;
+  margin: 0 auto;
+  padding: 0 2rem;  
+  display: flex;
+  flex-wrap: wrap;
+  color: white;
+  
+}
+.loadmore {
+  justify-content: center;
+  display: flex;  
+  margin: 0 0 10 0px;
+height: 100px;
+}
+.loadbutton {
+  padding: 0.6em 2em;
+  height: 50px;
+  border: none;
+  outline: none;
+  color: rgb(255, 255, 255);
+  background: #111;
+  cursor: pointer;
+  position: relative;
+  z-index: 0;
+  border-radius: 10px;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  transition: all .5s ease-in-out;
   font-size: 15px;
-  border: 1px solid red;
+  font-family: monospace;
+}
+
+.loadbutton:before {
+  content: "";
+  background: linear-gradient(
+    45deg,
+    #ff0000,
+    #ff7300,
+    #fffb00,
+    #00ffd5,
+    #002bff,
+    #ff0000
+  );
+  position: absolute;
+  top: -2px;
+  left: -2px;
+  background-size: 150%;
+  z-index: -1;
+  filter: blur(5px);
+  -webkit-filter: blur(7px);
+  width: calc(100% + 6px);
+  height: calc(100% + 6px);
+  border-radius: 10px;
+}
+
+
+
+.loadbutton:after{
+  z-index: -1;
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: #222;
+  left: 0;
+  top: 0;
+  border-radius: 20px;
+}
+
+.loadbutton:active{
+  transform: translate(0px, 5px);
+              -webkit-transform: translate(0px, 5px);
+              box-shadow: 0px 1px 0px 0px;
+}
+.loadbutton:hover {
+  padding: 20px 50px;
+  transform: scale(1.1);
+  font-size: 17px;
+ 
+}
+.starshiplist {
+  width:300px;
+   margin:30px;
+   padding: 10px;
+   background-color:slategray ;
+   border-radius: 5px;
+   box-shadow: 3px 3px 2px black, 0 0 25px blue, 0 0 5px red;
+
+}
+.starshiplist p {
+  font-size: 18px;
+  font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  padding: 5px;
+}
+.details-link p  {
+  text-decoration: none;
+  font-size: 15px;
+}
+.search-text{
+  display: flex;
+justify-content: center;
+height: 100px;
+}
+.search-text input{
+  border-radius: 10px;
+  height: 35px;
+  width: 300px;
+  border: 3px solid #9561e9;
+
+}
+
+.detail {
+  border: 8px solid white;
+  margin-left: 450px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color:white;
+  flex-direction: column;
+  width: 600px;
+  height:600px;
+  border-radius: 5px;
+  background-color: cadetblue;
+  box-shadow: 3px 3px 2px black, 0 0 25px blue, 0 0 5px red;
+
+  }
+.detail img {
+  border: 5px solid rgb(4, 4, 63);
+  border-radius: 5px;
+  width: 400px;
+  margin-top: 5px;
+  box-shadow: 3px 3px 2px black, 0 0 25px blue, 0 0 5px red;
+  
+}
+.detail p {
+  
+    font-size: 19px;
+    font-family:monospace;
+    padding: 7px;
+    align-items: center;
+    color:lemonchiffon;
+    
+}
+.backbutton {
+  width: 85px;
+  border-radius: 10px;
+  margin-left:20px
+}
+
+.details-link p{
+  display: flex;
+  justify-content: center;
+ align-items: center;
+ color: black;
+ margin-top: 10px;
 }
